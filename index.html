@@ -16,20 +16,20 @@
           
           if (query && query.length > 1) {
               const targetUrl = "adsf/" + query.substring(1);     // remove the "?"
-              
+              console.log(targetUrl)
               // Basic safety: only allow http/https URLs
               try {
                   const urlObj = new URL(targetUrl);
                   if (urlObj.protocol === "http:" || urlObj.protocol === "https:") {
                       window.location.replace(targetUrl);
                   } else {
-                      alert("Invalid protocol. Only http/https allowed.")
+                      console.log("Invalid protocol. Only http/https allowed.")
                   }
               } catch (e) {
-                  alert("Invalid URL provided.");
+                  console.log("Invalid URL provided.");
               }
           } else {
-              alert("No destination URL found.");
+              console.log("No destination URL found.");
           }
       })();
     </script>
