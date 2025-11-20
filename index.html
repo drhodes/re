@@ -15,7 +15,8 @@
           const query = window.location.search;        // e.g. "?https://example.com"
           
           if (query && query.length > 1) {
-              const targetUrl = "adsf/" + query.substring(1);     // remove the "?"
+			  BASE_URL = "http://MIT-Ayiti.NET/resous/Kalkil-1A-Diferansyasyon.pdf" 
+              const targetUrl = BASE_URL + "#" + query.substring(1); 
               console.log(targetUrl)
               // Basic safety: only allow http/https URLs
               try {
