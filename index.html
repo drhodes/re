@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <meta name="robots" content="noindex, nofollow">
-    <script>
-        // Run as soon as possible
-        (function () {
-            // Get the raw query string (includes the leading ?)
-            const query = window.location.search;        // e.g. "?https://example.com"
-            
-            if (query && query.length > 1) {
-                const targetUrl = "adsf/" + query.substring(1);     // remove the "?"
-                
-                // Basic safety: only allow http/https URLs
-                try {
-                    const urlObj = new URL(targetUrl);
-                    if (urlObj.protocol === "http:" || urlObj.protocol === "https:") {
-                        window.location.replace(targetUrl);
-                    } else {
-                        document.body.innerText = "Invalid protocol. Only http/https allowed.";
-                    }
-                } catch (e) {
-                    document.body.innerText = "Invalid URL provided.";
-                }
-            } else {
-                document.body.innerText = "No destination URL found.";
-            }
-        })();
-    </script>
-</head>
-<body>
+
+  </head>
+  <body>
     <p>Redirecting…</p>
-</body>
+    <script>
+      // Run as soon as possible
+      (function () {
+          // Get the raw query string (includes the leading ?)
+          const query = window.location.search;        // e.g. "?https://example.com"
+          
+          if (query && query.length > 1) {
+              const targetUrl = "adsf/" + query.substring(1);     // remove the "?"
+              
+              // Basic safety: only allow http/https URLs
+              try {
+                  const urlObj = new URL(targetUrl);
+                  if (urlObj.protocol === "http:" || urlObj.protocol === "https:") {
+                      window.location.replace(targetUrl);
+                  } else {
+                      alert("Invalid protocol. Only http/https allowed.")
+                  }
+              } catch (e) {
+                  alert("Invalid URL provided.");
+              }
+          } else {
+              alert("No destination URL found.");
+          }
+      })();
+    </script>
+  </body>
 </html>
